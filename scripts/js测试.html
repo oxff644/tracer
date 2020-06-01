@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    data_list = [11, 22, 33];
+    for (var i = 0; i++; i < data.length) {
+
+        function xx(data) {
+            $.ajax({
+                url: "....",
+                data: {value: data_list[data]},
+                success: function (res) {
+                    // 1分钟之后执行回调函数
+                    console.log(data); // 输出：0/1/2
+                }
+            })
+        }
+
+        xx(i)
+    }
+    console.log(i) // 输出：2
+</script>
+</body>
+</html>
