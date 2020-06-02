@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'web.middleware.auth.AuthMiddleware'
 ]
 
-ROOT_URLCONF = 's25.urls'
+ROOT_URLCONF = 'tracer.urls'
 
 TEMPLATES = [
     {
