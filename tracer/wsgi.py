@@ -1,5 +1,5 @@
 """
-WSGI config for s25 project.
+WSGI config for tracer project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
