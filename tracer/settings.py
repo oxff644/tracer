@@ -140,6 +140,34 @@ TENCENT_SMS_TEMPLATE = {
 
 TENCENT_COS_ID = "COS的secret_id"
 TENCENT_COS_KEY = "COS的secret_key"
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379", # 安装redis的主机的 IP 和 端口
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CONNECTION_POOL_KWARGS": {
+                "max_connections": 1000,
+                "encoding": 'utf-8'
+            },
+            "PASSWORD": "1111111" # redis密码
+        }
+    },
+    # 如果你需要用连接池连上多台redis节点，以后你在做主从读写分离，就会用到这个，get_redis_connection中的参数，就是
+    # 按照这个redis名，default或者master在视图中就能直接使用这里连接好的
+    #  "master": {
+    #     "BACKEND": "django_redis.cache.RedisCache",
+    #     "LOCATION": "redis://1.1.1.1:6379", # 安装redis的主机的 IP 和 端口
+    #     "OPTIONS": {
+    #         "CLIENT_CLASS": "django_redis.client.DefaultClient",
+    #         "CONNECTION_POOL_KWARGS": {
+    #             "max_connections": 1000,
+    #             "encoding": 'utf-8'
+    #         },
+    #         "PASSWORD": "password" # redis密码
+    #     }
+    # }
+}
 
 # ########### 登录白名单：无需登录就可以访问的页面 ###########
 WHITE_REGEX_URL_LIST = [
