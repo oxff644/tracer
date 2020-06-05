@@ -40,35 +40,7 @@ def statistics_project_user(request, project_id):
     """ 项目成员每个人被分配的任务数量（问题类型的配比）"""
     start = request.GET.get('start')
     end = request.GET.get('end')
-
-    """
-    info = {
-        1:{
-            name:"武沛齐",
-            status:{
-                1:0,
-                2:1,
-                3:0,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
-            }
-        },
-        2:{
-            name:"王洋",
-            status:{
-                1:0,
-                2:0,
-                3:1,
-                4:0,
-                5:0,
-                6:0,
-                7:0,
-            }
-        }
-    }
-    """
+    
     # 1. 所有项目成员 及 未指派
     all_user_dict = collections.OrderedDict()
     all_user_dict[request.tracer.project.creator.id] = {
