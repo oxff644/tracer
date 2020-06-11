@@ -43,7 +43,7 @@ class Transaction(models.Model):
     order = models.CharField(verbose_name='订单号', max_length=64, unique=True)  # 唯一索引
 
     user = models.ForeignKey(verbose_name='用户', to='UserInfo',on_delete=models.CASCADE)
-    price_policy = models.ForeignKey(verbose_name='价格策略', to='PricePolicy',on_delete=models.CASCADE)
+    price_policy = models.ForeignKey(verbose_name='价格策略', to='PricePolicy',null=True,on_delete=models.CASCADE)
 
     count = models.IntegerField(verbose_name='数量（年）', help_text='0表示无限期')
 
